@@ -20,7 +20,7 @@ A real-time elevator control system implemented on ATSAMD21E18A microcontroller.
 Due to the ATSAMD21 operating at 3.3V and the LCD requiring 5V, we used a ULN2003 to step up the voltage. Since the ULN2003 inverts logic, we implemented macro-level signal flipping in LCD.c to ensure software logic remained intuitive while hardware signals were correctly translated
 #### 2. Precise Timing & Debouncing
 Handling button presses on the keypad often results in "bouncing" that causes mechanical switch noise. So, we implemented a timer-based debounce using TC5 to capture the count value during an interrupt and ignore follow-up triggers for a quarter of a second ensuring clean input without blocking the main execution loop.
-### File Structure
+### Project Structure
 - main.c: Core system initilization and main loop
 - elevator.c: Logic for the elevator state machine and queue management as well as implements core asynchronous queue and state logic
 - LCD.c: Register-level driver for the 16x2 display
