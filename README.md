@@ -11,10 +11,13 @@ A real-time elevator control system implemented on ATSAMD21E18A microcontroller.
 - **Custom LCD Driver:** Developed a 4-bit interface for a 16x2 LCD, including a signal inversion layer for ULN2003
 ### Hardware
 - **Microcontroller:** ATSAMD21E18A
+- **Programmer:** Snap In-Circuit Debugger/Programmer
 - **Input:** 4x4 Matrix Keypad
 - **Output:** 16x2 LCD
-- **Signal Conditioning:** ULN2003 (Inverter/Driver)
+- **Logic Inverter:** ULN2003A (Inverter/Driver)
 - **Indicators:** LEDs (Green, Red, Yellow, and White)
+- **Power Supply for LCD**: Arduino Uno R4 (used 5V)
+- **Additional Hardware:** Breadboard, Male-To-Male Jumper wires, Male-To-Female Jumper Wires, 10nF capacitors, 10kΩ resistors, potentiometer (adjust the voltage)
 ### Challenges & Solutions
 #### 1. Signal Inversion (ULN2003)
 Due to the ATSAMD21 operating at 3.3V and the LCD requiring 5V, we used a ULN2003 to step up the voltage. Since the ULN2003 inverts logic, we implemented macro-level signal flipping in LCD.c to ensure software logic remained intuitive while hardware signals were correctly translated
